@@ -6,49 +6,62 @@
   <title>Master DevOps from Scratch</title>
   <style>
     body {
-      background-color: #ffe6f0;
+      background: radial-gradient(circle at top left, #ffe6f0, #fff0f5, #faf0ff);
       font-family: 'Segoe UI', sans-serif;
-      color: #5c1a33;
+      color: #3d0c3d;
       margin: 0;
       padding: 0;
+      background-attachment: fixed;
     }
     header {
       text-align: center;
       padding: 2rem;
+      background: linear-gradient(135deg, #ffb3ec, #b3d9ff);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      border-bottom: 2px solid #ff66a3;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #d63384;
+      text-shadow: 1px 1px 4px #fff;
     }
     h2 {
       color: #b03060;
+      text-shadow: 1px 1px 2px #ffc0cb;
     }
     .highlight {
-      background-color: #ffc0cb;
-      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 0.6rem 1.2rem;
       border-radius: 10px;
       display: inline-block;
       margin-top: 1rem;
       font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .section {
-      max-width: 800px;
+      max-width: 850px;
       margin: 2rem auto;
-      padding: 1rem;
-      background-color: #fff0f5;
-      border-radius: 12px;
+      padding: 2rem;
+      background: linear-gradient(to right, #fff0f5, #ffe6ff);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(255, 192, 203, 0.2);
     }
     .cta {
       text-align: center;
       margin: 2rem 0;
     }
     .cta a {
-      background-color: #ff66a3;
+      background: linear-gradient(to right, #ff66a3, #b266ff);
       color: white;
       padding: 1rem 2rem;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 12px;
       font-weight: bold;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
+      transition: transform 0.3s ease;
+    }
+    .cta a:hover {
+      transform: scale(1.05);
     }
     form {
       display: flex;
@@ -58,32 +71,111 @@
     }
     input, textarea, button {
       padding: 0.75rem;
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid #ccc;
       font-size: 1rem;
     }
     button {
-      background-color: #ff66a3;
+      background: linear-gradient(to right, #ff66a3, #b266ff);
       color: white;
       font-weight: bold;
       border: none;
       cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
     }
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
+      background-color: #ffe6f0;
+      border-top: 1px solid #ffc0cb;
+      box-shadow: 0 -2px 6px rgba(255, 182, 193, 0.2);
     }
     iframe {
       width: 100%;
       height: 600px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    blockquote {
+      font-style: italic;
+      color: #661a52;
+      background-color: #fff0f8;
+      padding: 1rem;
+      border-left: 5px solid #ff66a3;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+  
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.2;
+      z-index: -1;
+      animation: shimmer 20s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
+
+    .section, header, footer {
+      animation: fadeInUp 1.5s ease both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255,255,255,0.8);
+      animation: twinkle 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.5; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.5); }
+    }
+  
+    * {
+      cursor: url('https://cdn.custom-cursor.com/db/2940/32/pixel-glow-pointer.png'), auto;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
+  <!-- Sparkly Star Background Effect -->
+  <div class="sparkle" style="top:10%;left:20%;animation-delay:0s;"></div>
+  <div class="sparkle" style="top:30%;left:70%;animation-delay:1s;"></div>
+  <div class="sparkle" style="top:50%;left:40%;animation-delay:2s;"></div>
+  <div class="sparkle" style="top:80%;left:60%;animation-delay:3s;"></div>
   <header>
+    <img src="Screenshot 2025-03-12 at 19.32.50.png" alt="Solaris AI Logo" style="width: 120px; height: auto; border-radius: 10px; margin-bottom: 1rem;">
     <h1>🚀 Master DevOps from Scratch</h1>
     <p class="highlight">9-Week Hands-On Course — Only £700</p>
     <p class="highlight">1-to-1 Instructor-Led Option Available</p>
@@ -100,6 +192,26 @@
       <li>✓ Hands-on support + 1-to-1 mentoring options</li>
       <li>✓ Real-world projects you can showcase</li>
     </ul>
+  </div>
+
+  <div class="section">
+    <h2>About Me</h2>
+    <p>
+      Hi, I'm Yasmin — a tech educator,  future quantum computing PhD researcher, and proud mother. My journey into tech was born from both necessity and passion. After becoming a mother, I began to explore new ways of working that allowed me to maintain my independence, curiosity, and creativity. 
+    </p>
+    <p>
+      Alongside my academic and professional pursuits in AI and cloud infrastructure, I've also deepened my connection to spirituality. That fusion — of high-tech thinking with grounded, intentional living — is what shapes everything I teach.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Our Mission</h2>
+    <p>
+      Solaris AI is dedicated to social mobility through skills empowerment. Our mission is to provide underrepresented and aspiring individuals with the tools, confidence, and community to break into tech — and thrive. We believe tech should be a path to <strong>freedom</strong>: creative freedom, financial freedom, and time freedom.
+    </p>
+    <p>
+      Through accessible, project-based learning and real mentorship, we're building a future where knowledge isn't gated by institutions but shared boldly.
+    </p>
   </div>
 
   <div class="section">
@@ -141,6 +253,22 @@
     <h2>Book a Call</h2>
     <p>If you’d prefer to speak with Yasmin first, you can book a quick call using the calendar below:</p>
     <iframe src="https://calendly.com/yasmintaylor846/devops-discovery-call"></iframe>
+  </div>
+
+  <div class="section">
+    <h2>Sponsorship Packages</h2>
+    <p>We welcome sponsors who want to invest in social impact through tech education. Our audience is primarily women, career changers, and underrepresented individuals looking to enter or grow in the tech industry.</p>
+    <p><strong>Packages start at £2,000</strong> and include the following tiered options:</p>
+    <ul>
+      <li><strong>💗 Bronze (£2,000)</strong>: Brand mention in newsletters + logo on landing page</li>
+      <li><strong>💖 Silver (£5,000)</strong>: Includes Bronze perks + shoutout during live sessions and access to student community</li>
+      <li><strong>💎 Gold (£10,000)</strong>: Includes all above + custom workshop or guest speaking opportunity + featured sponsor spotlight on social media</li>
+    </ul>
+    <p>Download our full sponsorship deck for more details:</p>
+    <div class="cta">
+      <a href="/downloads/sponsorship-deck.pdf" target="_blank">📄 Download Sponsorship PDF</a>
+    </div>
+    <p>Interested in becoming a sponsor? <a href="mailto:yasmintaylor846@gmail.com">Email us</a> to collaborate.</p>
   </div>
 
   <footer>
