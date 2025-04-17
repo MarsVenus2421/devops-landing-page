@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,9 +10,9 @@
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(to right, #090013, #1b0033);
       color: #e5e5ff;
-      background: radial-gradient(circle at top left, #ffe6f0, #fff0f5, #faf0ff);
-      font-family: 'Segoe UI', sans-serif;
-      color: #3d0c3d;
+      
+      font-family: 'Orbitron', sans-serif;
+      color: #e5e5ff;
       margin: 0;
       padding: 0;
       background-attachment: fixed;
@@ -34,8 +34,11 @@
       text-shadow: 0 0 10px #ff80ff;
     }
     h2 {
-      color: #b03060;
-      text-shadow: 1px 1px 2px #ffc0cb;
+      color: #ffd9fb;
+      text-shadow: 0 0 8px rgba(255, 182, 255, 0.6);
+      font-size: 1.9rem;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
     .highlight {
       background: rgba(255, 255, 255, 0.85);
@@ -50,7 +53,7 @@
       max-width: 850px;
       margin: 2rem auto;
       padding: 2rem;
-      background: linear-gradient(to right, #15002b, #1f0039); color: #e0caff;
+      background: linear-gradient(to right, #15002b, #1f0039); color: #d8bfff;
       border-radius: 16px;
       box-shadow: 0 0 20px rgba(153, 102, 255, 0.3);
     }
@@ -111,12 +114,13 @@
     }
     blockquote {
       font-style: italic;
-      color: #661a52;
-      background-color: #fff0f8;
+      color: #f9d8ff;
+      background: rgba(100, 0, 130, 0.2);
+      border-left: 5px solid #cc66ff;
       padding: 1rem;
-      border-left: 5px solid #ff66a3;
       margin: 1rem 0;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(204, 102, 255, 0.2);
     }
   
     body::before {
@@ -174,23 +178,47 @@
     html {
       scroll-behavior: smooth;
     }
-  </style>
+    body.light-theme {
+    background: linear-gradient(to right, #fff5f8, #f0e6ff);
+    color: #2a0033;
+  }
+
+  body.light-theme .section {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #2a0033 !important;
+    box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  }
+
+  body.light-theme header {
+    background: linear-gradient(to right, #fde7f3, #eae1ff);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.1);
+  }
+
+  body.light-theme .cta a, body.light-theme button {
+    background: #6a00ff;
+    color: white;
+  }
+</style>
 </head>
 <body>
-  
-  <header style="position: relative; background: url('/mnt/data/A_digital_illustration_promoting_a_9-week_introduc.png') no-repeat center center / cover; text-align: center; color: white; padding: 6rem 2rem;">
-  <div style="background-color: rgba(0, 0, 0, 0.6); padding: 3rem; border-radius: 20px; max-width: 700px; margin: auto;">
-    <h1 style="font-size: 3rem; text-shadow: 0 0 20px #fff;">🚀 Master DevOps from Scratch</h1>
-    <p class="highlight">9-Week Hands-On Course — Only £700</p>
-    <p class="highlight">1-to-1 Instructor-Led Option Available</p>
-    <p class="highlight">Optional Machine Learning Track</p>
-    <div class="cta">
-      <a href="#course-details" style="background: #8a2be2; border: 2px solid white; padding: 1rem 2rem; font-size: 1.1rem; border-radius: 10px; box-shadow: 0 0 20px #fff;">GET STARTED</a>
-    </div>
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 6rem 4rem; background: linear-gradient(to right, #090013, #1b0033); height: 100vh;">
+  <div style="max-width: 600px; z-index: 2;">
+    <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3.5rem; color: #fef3ff; text-shadow: 0 0 18px #ffb3ff; line-height: 1.2;">✨ Master DevOps<br>From Scratch</h1>
+    <p style="font-size: 1.4rem; margin-top: 1rem; color: #e8dfff; font-weight: 500;">9-Week Hands-On Course — Only £700</p>
+    <p style="font-size: 1.1rem; margin: 0.5rem 0 1.5rem; color: #f1dcff;">Optional Machine Learning Track Available</p>
+    <a href="#course-details" style="display: inline-block; background: linear-gradient(to right, #b233ff, #f047ff); color: white; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: bold; border-radius: 14px; text-decoration: none; box-shadow: 0 0 25px rgba(255, 179, 255, 0.5);">🚀 Get Started</a>
+  </div>
+  <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+    <img src="A_digital_illustration_promoting_a_9-week_introduc.png" alt="Black Fairy Space Tech" style="width: 420px; max-width: 90vw; height: auto; border-radius: 20px; box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);">
   </div>
 </header>
 
-  <div class="section" id="course-content">
+  
+  </header>
+  
+</header>
+
+  <div class="section" style="background: rgba(15, 0, 40, 0.75); box-shadow: 0 0 25px rgba(173, 132, 255, 0.3); border: 1px solid rgba(255,255,255,0.05);" id="course-content">
     <h2>Why Take This Course?</h2>
     <p>
       Looking to break into tech or upgrade your skillset fast?
@@ -306,5 +334,71 @@
       <a href="https://www.instagram.com/taila_sky" target="_blank">Instagram: @taila_sky</a><br>
       <a href="https://www.linkedin.com/in/%F0%9F%9A%80-yasmin-benjamin" target="_blank">🚀 Yasmin Benjamin</a></p>
   </footer>
+<audio autoplay loop hidden>
+  <source src="https://cdn.pixabay.com/audio/2022/08/04/audio_4ab5b50c7c.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const stars = [];
+    const body = document.body;
+    for (let i = 0; i < 50; i++) {
+      let star = document.createElement('div');
+      star.classList.add('sparkle');
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
+      star.style.animationDelay = `${Math.random() * 5}s`;
+      body.appendChild(star);
+      stars.push(star);
+    }
+  });
+  const audioToggle = document.createElement('button');
+  audioToggle.textContent = '🔊 Toggle Music';
+  audioToggle.style.position = 'fixed';
+  audioToggle.style.bottom = '20px';
+  audioToggle.style.right = '20px';
+  audioToggle.style.zIndex = '9999';
+  audioToggle.style.background = 'rgba(69, 46, 255, 0.8)';
+  audioToggle.style.color = 'white';
+  audioToggle.style.border = 'none';
+  audioToggle.style.padding = '0.7rem 1.2rem';
+  audioToggle.style.borderRadius = '8px';
+  audioToggle.style.boxShadow = '0 0 12px rgba(255,255,255,0.3)';
+  audioToggle.style.fontWeight = 'bold';
+  document.body.appendChild(audioToggle);
+
+  const bgAudio = document.querySelector('audio');
+  audioToggle.addEventListener('click', () => {
+    if (bgAudio.paused) {
+      bgAudio.play();
+      audioToggle.textContent = '🔊 Music On';
+    } else {
+      bgAudio.pause();
+      audioToggle.textContent = '🔇 Music Off';
+    }
+  });
+  const themeToggle = document.createElement('button');
+  themeToggle.textContent = '🌓 Toggle Theme';
+  themeToggle.style.position = 'fixed';
+  themeToggle.style.bottom = '70px';
+  themeToggle.style.right = '20px';
+  themeToggle.style.zIndex = '9999';
+  themeToggle.style.background = 'rgba(69, 46, 255, 0.8)';
+  themeToggle.style.color = 'white';
+  themeToggle.style.border = 'none';
+  themeToggle.style.padding = '0.7rem 1.2rem';
+  themeToggle.style.borderRadius = '8px';
+  themeToggle.style.boxShadow = '0 0 12px rgba(255,255,255,0.3)';
+  themeToggle.style.fontWeight = 'bold';
+  document.body.appendChild(themeToggle);
+
+  let darkMode = true;
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    darkMode = !darkMode;
+    themeToggle.textContent = darkMode ? '🌓 Toggle Theme' : '🌞 Toggle Theme';
+  });
+</script>
 </body>
 </html>
