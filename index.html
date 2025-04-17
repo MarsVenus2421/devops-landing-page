@@ -1,404 +1,123 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Master DevOps from Scratch</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-<style>
+  <style>
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(to right, #090013, #1b0033);
-      color: #e5e5ff;
-      
-      font-family: 'Orbitron', sans-serif;
-      color: #e5e5ff;
       margin: 0;
-      padding: 0;
-      background-attachment: fixed;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to right, #0f0019, #1a002f);
+      color: #e5e5ff;
     }
     header {
-      background: linear-gradient(to right, #2d0059, #4d0073);
-      color: white;
-      border: none;
-      box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
-      text-align: center;
-      padding: 2rem;
-      background: linear-gradient(135deg, #ffb3ec, #b3d9ff);
-      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
-      border-bottom: 2px solid #ff66a3;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 2rem;
+      min-height: 100vh;
+      gap: 2rem;
     }
-    h1 {
-      font-size: 2.8rem;
-      color: #d63384;
-      text-shadow: 0 0 10px #ff80ff;
+    .hero-text {
+      max-width: 500px;
+      z-index: 2;
     }
-    h2 {
-      color: #ffd9fb;
-      text-shadow: 0 0 8px rgba(255, 182, 255, 0.6);
-      font-size: 1.9rem;
-      font-weight: bold;
-      letter-spacing: 1px;
+    .hero-text h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 0 0 15px #f0f;
     }
-    .highlight {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 0.6rem 1.2rem;
-      border-radius: 10px;
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #e0d7ff;
+    }
+    .buttons {
+      margin-top: 2rem;
+    }
+    .buttons a {
       display: inline-block;
-      margin-top: 1rem;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .section {
-      max-width: 850px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: linear-gradient(to right, #15002b, #1f0039); color: #d8bfff;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(153, 102, 255, 0.3);
-    }
-    .cta {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .cta a {
-      background: linear-gradient(to right, #6e00ff, #e600ff);
-      color: white;
+      margin: 0.5rem;
       padding: 1rem 2rem;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      color: white;
       text-decoration: none;
       border-radius: 12px;
       font-weight: bold;
-      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
-      transition: transform 0.3s ease;
+      transition: background 0.3s ease;
     }
-    .cta a:hover {
-      transform: scale(1.05);
+    .buttons a:hover {
+      background: linear-gradient(to right, #4a00e0, #8e2de2);
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1rem;
+    .fairy-video {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
     }
-    input, textarea, button {
-      padding: 0.75rem;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
+    .section {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
     }
-    button {
-      background: linear-gradient(to right, #ff66a3, #b266ff);
-      color: white;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s ease;
+    .section h2 {
+      color: #ffccff;
+      text-shadow: 0 0 5px #cc66ff;
     }
-    button:hover {
-      transform: scale(1.05);
+    .section ul li {
+      margin: 0.5rem 0;
     }
     footer {
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      background-color: #ffe6f0;
-      border-top: 1px solid #ffc0cb;
-      box-shadow: 0 -2px 6px rgba(255, 182, 193, 0.2);
+      padding: 2rem;
+      color: #ccc;
     }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    blockquote {
-      font-style: italic;
-      color: #f9d8ff;
-      background: rgba(100, 0, 130, 0.2);
-      border-left: 5px solid #cc66ff;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(204, 102, 255, 0.2);
-    }
-  
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://www.transparenttextures.com/patterns/stardust.png');
-      opacity: 0.2;
-      z-index: -1;
-      animation: shimmer 20s linear infinite;
-    }
-
-    @keyframes shimmer {
-      0% { background-position: 0 0; }
-      100% { background-position: 1000px 1000px; }
-    }
-
-    .section, header, footer {
-      animation: fadeInUp 1.5s ease both;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translate3d(0, 40px, 0);
-      }
-      to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-      }
-    }
-
-    .sparkle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 0 8px rgba(255,255,255,0.8);
-      animation: twinkle 2s infinite ease-in-out alternate;
-    }
-
-    @keyframes twinkle {
-      from { opacity: 0.5; transform: scale(1); }
-      to { opacity: 1; transform: scale(1.5); }
-    }
-  
-    * {
-      cursor: url('https://cdn.custom-cursor.com/db/2940/32/pixel-glow-pointer.png'), auto;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-    body.light-theme {
-    background: linear-gradient(to right, #fff5f8, #f0e6ff);
-    color: #2a0033;
-  }
-
-  body.light-theme .section {
-    background: rgba(255, 255, 255, 0.9) !important;
-    color: #2a0033 !important;
-    box-shadow: 0 0 12px rgba(0,0,0,0.05);
-  }
-
-  body.light-theme header {
-    background: linear-gradient(to right, #fde7f3, #eae1ff);
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.1);
-  }
-
-  body.light-theme .cta a, body.light-theme button {
-    background: #6a00ff;
-    color: white;
-  }
-</style>
+  </style>
 </head>
 <body>
-  <header style="display: flex; align-items: center; justify-content: space-between; padding: 6rem 4rem; background: linear-gradient(to right, #090013, #1b0033); height: 100vh;">
-  <div style="max-width: 600px; z-index: 2;">
-    <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3.5rem; color: #fef3ff; text-shadow: 0 0 18px #ffb3ff; line-height: 1.2;">✨ Master DevOps<br>From Scratch</h1>
-    <p style="font-size: 1.4rem; margin-top: 1rem; color: #e8dfff; font-weight: 500;">9-Week Hands-On Course — Only £700</p>
-    <p style="font-size: 1.1rem; margin: 0.5rem 0 1.5rem; color: #f1dcff;">Optional Machine Learning Track Available</p>
-    <a href="#course-details" style="display: inline-block; background: linear-gradient(to right, #b233ff, #f047ff); color: white; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: bold; border-radius: 14px; text-decoration: none; box-shadow: 0 0 25px rgba(255, 179, 255, 0.5);">🚀 Get Started</a>
-  </div>
-  <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
-    <img src="A_digital_illustration_promoting_a_9-week_introduc.png" alt="Black Fairy Space Tech" style="width: 420px; max-width: 90vw; height: auto; border-radius: 20px; box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);">
-  </div>
-</header>
-
-  
+  <header>
+    <div class="hero-text">
+      <h1>✨ Master DevOps from Scratch</h1>
+      <p>9-Week Hands-On Course – Only £700</p>
+      <p>Optional Machine Learning Track Included</p>
+      <div class="buttons">
+        <a href="#course-content">📘 View Course Content</a>
+        <a href="#signup">🚀 Enrol Now</a>
+      </div>
+    </div>
+    <video autoplay muted loop playsinline class="fairy-video">
+      <source src="20250311_2043_Futuristic Fairy Tech Mastery_remix_01jp3f5e9yes79ab7mn9jv9d0v.mp4" type="video/mp4">
+    </video>
   </header>
-  
-</header>
 
-  <div class="section" style="background: rgba(15, 0, 40, 0.75); box-shadow: 0 0 25px rgba(173, 132, 255, 0.3); border: 1px solid rgba(255,255,255,0.05);" id="course-content">
-    <h2>Why Take This Course?</h2>
-    <p>
-      Looking to break into tech or upgrade your skillset fast?
-      This Intro to DevOps course teaches you how to automate, deploy, and manage modern software systems — and it doesn’t stop there.
-    </p>
+  <section class="section" id="course-content">
+    <h2>What You'll Learn</h2>
     <ul>
-      <li>✓ No prior DevOps experience needed</li>
-      <li>✓ Hands-on support + 1-to-1 mentoring options</li>
-      <li>✓ Real-world projects you can showcase</li>
+      <li>✓ Git, CI/CD, Docker, Kubernetes</li>
+      <li>✓ Terraform, Cloud Providers (AWS, Azure, GCP)</li>
+      <li>✓ Logging, Monitoring & Security Basics</li>
+      <li>✓ Machine Learning Track: MLOps, Model Deployment</li>
     </ul>
-    <div class="cta">
-      <a href="#course-details">📘 View Full Course Content</a>
-    </div>
-  </div>
+  </section>
 
-  
-    <div class="cta">
-      <a href="/downloads/course-outline.pdf" target="_blank">📄 Download Course Outline</a>
-    </div>
-    <p>Track your progress through each module using our interactive checklist below:</p>
-    <ul style="list-style: none; padding-left: 0;">
-      <li><input type="checkbox" id="w1"> <label for="w1">Week 1: Intro to DevOps</label></li>
-      <li><input type="checkbox" id="w2"> <label for="w2">Week 2: Git & GitHub</label></li>
-      <li><input type="checkbox" id="w3"> <label for="w3">Week 3: CI/CD Pipelines</label></li>
-      <li><input type="checkbox" id="w4"> <label for="w4">Week 4: Docker Essentials</label></li>
-      <li><input type="checkbox" id="w5"> <label for="w5">Week 5: Kubernetes Basics</label></li>
-      <li><input type="checkbox" id="w6"> <label for="w6">Week 6: IaC with Terraform & Ansible</label></li>
-      <li><input type="checkbox" id="w7"> <label for="w7">Week 7: Cloud Platforms Overview</label></li>
-      <li><input type="checkbox" id="w8"> <label for="w8">Week 8: Monitoring & Logging</label></li>
-      <li><input type="checkbox" id="w9"> <label for="w9">Week 9: Capstone Project</label></li>
-    </ul>
-    <p>You’ll also receive bonus sessions on personal branding, resume reviews, and portfolio creation. Weekly office hours included!</p>
-  </div>
+  <section class="section" id="signup">
+    <h2>Sign Up Now</h2>
+    <p>Secure your spot and begin your transformation.</p>
+    <a href="https://buy.stripe.com/test_examplelink" target="_blank" class="buttons">💳 Pay via Stripe</a>
+    <p>or</p>
+    <a href="https://calendly.com/yasmintaylor846/devops-discovery-call" target="_blank" class="buttons">📞 Book a Discovery Call</a>
+  </section>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      Hi, I'm Yasmin — a tech educator,  future quantum computing PhD researcher, and proud mother. My journey into tech was born from both necessity and passion. After becoming a mother, I began to explore new ways of working that allowed me to maintain my independence, curiosity, and creativity. 
-    </p>
-    <p>
-      Alongside my academic and professional pursuits in AI and cloud infrastructure, I've also deepened my connection to spirituality. That fusion — of high-tech thinking with grounded, intentional living — is what shapes everything I teach.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Our Mission</h2>
-    <p>
-      Solaris AI is dedicated to social mobility through skills empowerment. Our mission is to provide underrepresented and aspiring individuals with the tools, confidence, and community to break into tech — and thrive. We believe tech should be a path to <strong>freedom</strong>: creative freedom, financial freedom, and time freedom.
-    </p>
-    <p>
-      Through accessible, project-based learning and real mentorship, we're building a future where knowledge isn't gated by institutions but shared boldly.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Optional Track: Machine Learning</h2>
-    <p>After completing the DevOps course, you can choose to continue with our Machine Learning Fundamentals track. You'll learn:</p>
-    <ul>
-      <li>How to deploy AI models in production</li>
-      <li>Understand MLOps workflows</li>
-      <li>Build smart, scalable apps using Python & cloud ML services</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Testimonials</h2>
-    <blockquote>
-      "This course helped me switch careers into tech. Yasmin's teaching style is amazing!" – Sarah A.
-    </blockquote>
-    <blockquote>
-      "Clear, practical, and empowering. I loved the optional Machine Learning add-on." – Dee J.
-    </blockquote>
-  </div>
-
-  <div class="section">
-    <h2>FAQs</h2>
-    <p><strong>Q: Do I need a tech background?</strong><br>A: Nope! We start from the basics and guide you every step of the way.</p>
-    <p><strong>Q: Is there a certificate?</strong><br>A: Yes, you'll receive a Certificate of Completion!</p>
-    <p><strong>Q: How do I pay?</strong><br>A: You can pay securely below or schedule a call to discuss options.</p>
-  </div>
-
-  <div class="section">
-    <h2>Pay Securely</h2>
-    <p>Use the link below to pay for your course via our secure checkout system:</p>
-    <div class="cta">
-      <a href="https://buy.stripe.com/test_examplelink" target="_blank">Pay Now via Stripe</a>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Book a Call</h2>
-    <p>If you’d prefer to speak with Yasmin first, you can book a quick call using the calendar below:</p>
-    <iframe src="https://calendly.com/yasmintaylor846/devops-discovery-call"></iframe>
-  </div>
-
-  <div class="section">
-    <h2>Sponsorship Packages</h2>
-    <p>We welcome sponsors who want to invest in social impact through tech education. Our audience is primarily women, career changers, and underrepresented individuals looking to enter or grow in the tech industry.</p>
-    <p><strong>Packages start at £2,000</strong> and include the following tiered options:</p>
-    <ul>
-      <li><strong>💗 Bronze (£2,000)</strong>: Brand mention in newsletters + logo on landing page</li>
-      <li><strong>💖 Silver (£5,000)</strong>: Includes Bronze perks + shoutout during live sessions and access to student community</li>
-      <li><strong>💎 Gold (£10,000)</strong>: Includes all above + custom workshop or guest speaking opportunity + featured sponsor spotlight on social media</li>
-    </ul>
-    <p>Download our full sponsorship deck for more details:</p>
-    <div class="cta">
-      <a href="/downloads/sponsorship-deck.pdf" target="_blank">📄 Download Sponsorship PDF</a>
-    </div>
-    <p>Interested in becoming a sponsor? <a href="mailto:yasmintaylor846@gmail.com">Email us</a> to collaborate.</p>
-  </div>
-
-  <br>
-      <a href="https://www.instagram.com/taila_sky" target="_blank">Instagram: @taila_sky</a><br>
-      <a href="https://www.linkedin.com/in/%F0%9F%9A%80-yasmin-benjamin" target="_blank">🚀 Yasmin Benjamin</a></p>
+  <footer>
+    <p>Follow Yasmin:</p>
+    <p><a href="https://www.instagram.com/taila_sky" target="_blank">Instagram</a> | <a href="https://www.linkedin.com/in/%F0%9F%9A%80-yasmin-benjamin" target="_blank">LinkedIn</a></p>
+    <p>&copy; 2025 Solaris AI</p>
   </footer>
-<audio autoplay loop hidden>
-  <source src="https://cdn.pixabay.com/audio/2022/08/04/audio_4ab5b50c7c.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const stars = [];
-    const body = document.body;
-    for (let i = 0; i < 50; i++) {
-      let star = document.createElement('div');
-      star.classList.add('sparkle');
-      star.style.top = `${Math.random() * 100}%`;
-      star.style.left = `${Math.random() * 100}%`;
-      star.style.animationDuration = `${1 + Math.random() * 2}s`;
-      star.style.animationDelay = `${Math.random() * 5}s`;
-      body.appendChild(star);
-      stars.push(star);
-    }
-  });
-  const audioToggle = document.createElement('button');
-  audioToggle.textContent = '🔊 Toggle Music';
-  audioToggle.style.position = 'fixed';
-  audioToggle.style.bottom = '20px';
-  audioToggle.style.right = '20px';
-  audioToggle.style.zIndex = '9999';
-  audioToggle.style.background = 'rgba(69, 46, 255, 0.8)';
-  audioToggle.style.color = 'white';
-  audioToggle.style.border = 'none';
-  audioToggle.style.padding = '0.7rem 1.2rem';
-  audioToggle.style.borderRadius = '8px';
-  audioToggle.style.boxShadow = '0 0 12px rgba(255,255,255,0.3)';
-  audioToggle.style.fontWeight = 'bold';
-  document.body.appendChild(audioToggle);
-
-  const bgAudio = document.querySelector('audio');
-  audioToggle.addEventListener('click', () => {
-    if (bgAudio.paused) {
-      bgAudio.play();
-      audioToggle.textContent = '🔊 Music On';
-    } else {
-      bgAudio.pause();
-      audioToggle.textContent = '🔇 Music Off';
-    }
-  });
-  const themeToggle = document.createElement('button');
-  themeToggle.textContent = '🌓 Toggle Theme';
-  themeToggle.style.position = 'fixed';
-  themeToggle.style.bottom = '70px';
-  themeToggle.style.right = '20px';
-  themeToggle.style.zIndex = '9999';
-  themeToggle.style.background = 'rgba(69, 46, 255, 0.8)';
-  themeToggle.style.color = 'white';
-  themeToggle.style.border = 'none';
-  themeToggle.style.padding = '0.7rem 1.2rem';
-  themeToggle.style.borderRadius = '8px';
-  themeToggle.style.boxShadow = '0 0 12px rgba(255,255,255,0.3)';
-  themeToggle.style.fontWeight = 'bold';
-  document.body.appendChild(themeToggle);
-
-  let darkMode = true;
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    darkMode = !darkMode;
-    themeToggle.textContent = darkMode ? '🌓 Toggle Theme' : '🌞 Toggle Theme';
-  });
-</script>
 </body>
 </html>
